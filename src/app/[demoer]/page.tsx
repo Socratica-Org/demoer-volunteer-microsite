@@ -54,25 +54,22 @@ export default function Home() {
       />
       {!isAnimating && (
         <div className="absolute top-10 left-10 w-1/2 h-full z-40">
-          <p className="text-2xl font-fiveBySeven">
+          <p className="text-2xl font-fiveBySevenBold opacity-50">
             TO:
-            <span className="ml-6 font-conte text-2xl opacity-50">
+            <span className="ml-[3.4rem] font-conte text-2xl">
               {capitalizeFirstLetter((demoer as string) || "Demoer")}
             </span>
           </p>
-          <p className="text-2xl font-fiveBySeven">
+          <p className="text-2xl font-fiveBySevenBold opacity-50">
             FROM:
-            <span className="ml-6 font-conte text-2xl opacity-50">
-              Socratica
-            </span>
+            <span className="ml-6 font-conte text-2xl">Socratica</span>
           </p>
 
-          <button
+          <div 
             onClick={() => {
               setIsAnimating(true);
-              console.log("clicked");
             }}
-            className="z-50 mt-8 flex flex-row items-center gap-2 bg-[#212121] text-white px-6 py-3 border-2 border-white/30 shadow-letter hover:bg-[#333333] hover:shadow-none"
+            className="mt-12 glassmorphic-button border-[1px] border-white/30 shadow-letter hover:bg-[#333333] hover:shadow-none bg-[#212121] gap-[8px] justify-center inline-flex"
           >
             <Image
               src="/images/asterism.svg"
@@ -80,10 +77,10 @@ export default function Home() {
               width={16}
               height={16}
             />
-            <p className="uppercase text-base font-fiveBySevenBold">
+            <div className="text-[#F5F1E2] tracking-widest font-fiveBySevenBold uppercase text-[11px] sm:text-[16px]">
               Open Your Letter
-            </p>
-          </button>
+            </div>
+          </div>
         </div>
       )}
 
@@ -99,7 +96,7 @@ export default function Home() {
       )}
 
       <div
-        className={`absolute top-0 right-0 w-full h-full transition-transform duration-1000 ${
+        className={`absolute top-0 right-0 w-full h-full transition-transform duration-500 ${
           isAnimating ? "transform translate-x-0" : "transform translate-x-1/2"
         }`}
       >
@@ -113,6 +110,18 @@ export default function Home() {
               isFinal ? "opacity-0" : "opacity-100"
             }`}
           />
+        )}
+
+        {isAnimating && !isFinal && (
+          <div className="absolute inset-0 flex items-center justify-center z-[1000]">
+            <Image
+              src="/images/closed-letter.svg"
+              alt="Closed Letter"
+              width={160}
+              height={160}
+              className="transition-opacity duration-1000"
+            />
+          </div>
         )}
 
         {isFinal && (

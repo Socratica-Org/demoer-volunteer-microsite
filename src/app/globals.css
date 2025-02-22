@@ -43,3 +43,18 @@ body::before {
   font-weight: normal;
   src: url("/fonts/Conte.otf") format("opentype");
 }
+
+@layer components {
+  .glassmorphic-button {
+    @apply transition-all duration-200 shadow-[0_4px_0_rgba(255,255,255,0.24)] backdrop-blur-[24px] before:absolute before:inset-0 before:shadow-[inset_0_2px_24px_rgba(255,255,255,0.16)] active:shadow-[0_0px_0px_rgb(0,0,0)] active:translate-y-[4px] border-2 border-[#FFFFFF24] flex flex-row px-[24px] py-[16px] items-center relative cursor-pointer;
+  }
+  .canvas-date {
+    @apply transition-all duration-200 shadow-[0_2px_0_rgba(255,255,255,0.08)] backdrop-blur-[24px] before:absolute before:inset-0 before:shadow-[inset_0_2px_24px_rgba(255,255,255,0.25)] active:shadow-[0_4px_24px_rgb(0,0,0)] active:translate-y-[4px] border-2 border-[#FFFFFF24] flex flex-row px-[24px] py-[16px] items-center relative cursor-pointer;
+  }
+  .palette-on-button {
+    @apply shadow-[0px_0px_0px_2px_rgba(0,215,242,0.16),0px_4px_24px_0px_rgba(0,0,0,1)] before:shadow-[inset_0px_2px_8px_0px_rgba(255,255,255,0.25)] w-full h-[34px] border-[#5D5D5C] border-2 bg-[#00000008] flex items-center justify-center relative;
+  }
+  .palette-off-button {
+    @apply w-full h-[34px] border-[#FFFFFF24] border-2 border-dashed flex items-center justify-center relative;
+  }
+}

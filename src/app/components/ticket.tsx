@@ -53,7 +53,7 @@ const Ticket: React.FC = () => {
   return (
     <div
       ref={ticketRef}
-      style={{ position: "relative", display: "inline-block" }}
+      style={{ position: "relative", display: "inline-block", zIndex: 50 }}
     >
       <Image
         src="/images/final-ticket.png"

@@ -14,7 +14,7 @@ export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isFinal, setIsFinal] = useState(false);
   const [showLetter, setShowLetter] = useState(false);
-  
+
   useEffect(() => {
     if (isAnimating) {
       const timer = setTimeout(() => {
@@ -57,12 +57,14 @@ export default function Home() {
           <p className="text-2xl font-fiveBySeven">
             TO:
             <span className="ml-6 font-conte text-2xl opacity-50">
-              {capitalizeFirstLetter(demoer as string || "Demoer")}
+              {capitalizeFirstLetter((demoer as string) || "Demoer")}
             </span>
           </p>
           <p className="text-2xl font-fiveBySeven">
             FROM:
-            <span className="ml-6 font-conte text-2xl opacity-50">Socratica</span>
+            <span className="ml-6 font-conte text-2xl opacity-50">
+              Socratica
+            </span>
           </p>
 
           <button
@@ -84,7 +86,7 @@ export default function Home() {
           </button>
         </div>
       )}
-      
+
       {!isAnimating && (
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <Image
@@ -151,8 +153,8 @@ export default function Home() {
           transform: isFinal
             ? "translate(-130%, 150%) rotate(15deg)"
             : isAnimating
-            ? "translate(-50%, 50%) rotate(15deg)"
-            : "rotate(40deg) translate(-375px, 150px)",
+              ? "translate(-50%, 50%) rotate(15deg)"
+              : "rotate(40deg) translate(-375px, 150px)",
         }}
       >
         <Ticket />

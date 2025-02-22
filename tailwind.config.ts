@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gold: "#CDC19F",
+      },
+      fontFamily: {
+        tiempos: ["Tiempos Headline", "serif"],
+        fiveBySeven: ["Five By Seven", "sans-serif"],
+        conte: ["Conte", "sans-serif"],
       },
     },
   },

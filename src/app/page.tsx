@@ -14,6 +14,22 @@ export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isFinal, setIsFinal] = useState(false);
   const [showLetter, setShowLetter] = useState(false);
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const timer1 = setTimeout(() => {
+      setOpacity(0.6);
+    }, 500);
+
+    const timer2 = setTimeout(() => {
+      setOpacity(1);
+    }, 800);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
 
   useEffect(() => {
     if (isAnimating) {
@@ -112,18 +128,6 @@ export default function Home() {
           />
         )}
 
-        {isAnimating && !isFinal && (
-          <div className="absolute inset-0 flex items-center justify-center z-[1000]">
-            <Image
-              src="/images/closed-letter.svg"
-              alt="Closed Letter"
-              width={160}
-              height={160}
-              className="transition-opacity duration-1000"
-            />
-          </div>
-        )}
-
         {isFinal && (
           <Image
             src="/backgrounds/background-final.svg"
@@ -168,6 +172,22 @@ export default function Home() {
       >
         <Ticket />
       </div>
+
+      {isAnimating && !showLetter && (
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ zIndex: 1000, opacity }}
+        >
+          <Image
+            src="/images/closed-letter.svg"
+            alt="Closed Letter"
+            width={160}
+            height={160}
+            className="transition-opacity duration-1000"
+          />
+        </div>
+      )}
+
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <div className="flex-grow" />

@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useMemo,
-  useRef,
-} from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import Image from "next/image";
 
 const Ticket: React.FC = () => {
@@ -53,7 +47,7 @@ const Ticket: React.FC = () => {
   return (
     <div
       ref={ticketRef}
-      style={{ position: "relative", display: "inline-block", zIndex: 50 }}
+      style={{ position: "relative", display: "inline-block" }}
     >
       <Image
         src="/images/final-ticket.png"

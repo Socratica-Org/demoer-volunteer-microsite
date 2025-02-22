@@ -1,7 +1,13 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import OptimizedTicketSection from "./components/ticket";
+import Ticket from "./components/ticket";
 
 export default function Home() {
+  const [screenSize, setScreenSize] = useState("full");
+  const offset1 = (screenSize == "mobile") ? 155 : 214;
+
   return (
     <div className="relative flex flex-col min-h-screen max-h-screen overflow-hidden">
       <Image
@@ -57,6 +63,23 @@ export default function Home() {
           layout="fill"
           objectFit="cover"
         />
+      </div>
+
+      <div
+        className="absolute top-0 right-0 w-[40%] h-auto z-10"
+        style={{ transform: "rotate(40deg) translate(-275px, 150px)" }}
+      >
+        {/* <Image 
+          src="/images/final-ticket.png"
+          width={1089}
+          height={389}
+          alt="ticket"
+          className="shadow-2xl z-50 w-full"
+          priority
+        /> */}
+
+        <Ticket />
+        
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">

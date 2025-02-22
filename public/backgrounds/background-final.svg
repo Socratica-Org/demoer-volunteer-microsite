@@ -32,12 +32,6 @@
 <g style="mix-blend-mode:multiply" opacity="0.1">
 <rect width="2459.96" height="1655.29" transform="matrix(1 0 0 -1 -36.1445 1621.94)" fill="url(#pattern0_2003_48481)"/>
 </g>
-<g style="mix-blend-mode:soft-light" opacity="0.3">
-<path d="M1655.73 2073.49L548.59 -1.4751L3212.84 1121.81L3043.56 1643.17L1655.73 2073.49Z" fill="url(#paint3_linear_2003_48481)"/>
-</g>
-<g style="mix-blend-mode:soft-light" opacity="0.3">
-<path d="M1858.72 1756.27L2730.29 -228.303L941.29 1010.59L1007.73 1473.58L1858.72 1756.27Z" fill="url(#paint4_linear_2003_48481)"/>
-</g>
 </g>
 <defs>
 <filter id="filter0_f_2003_48481" x="181.446" y="-69.9503" width="1097.24" height="1126.43" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -91,14 +85,6 @@
 <stop offset="0.571072" stop-color="#FFC700"/>
 <stop offset="1" stop-color="#FF3E1B"/>
 </radialGradient>
-<linearGradient id="paint3_linear_2003_48481" x1="1022.16" y1="249.488" x2="2737.39" y2="1269.59" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FFFFE3"/>
-<stop offset="1" stop-color="#FFFFE3" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint4_linear_2003_48481" x1="2408.21" y1="38.7931" x2="1028.17" y2="516.078" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FFFFE3"/>
-<stop offset="1" stop-color="#FFFFE3" stop-opacity="0"/>
-</linearGradient>
 <clipPath id="clip0_2003_48481">
 <rect width="2355.5" height="1534" fill="white"/>
 </clipPath>

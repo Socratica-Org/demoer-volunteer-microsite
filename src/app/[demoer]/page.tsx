@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import Ticket from "./components/ticket";
+import Ticket from "../components/ticket";
 
 function capitalizeFirstLetter(str: string): string {
   if (!str) return str;

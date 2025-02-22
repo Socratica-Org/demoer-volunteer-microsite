@@ -23,6 +23,16 @@ export default {
         letter:
           "0px 8px 0px 0px rgba(0, 0, 0, 0.24), 0px 4px 48px 0px rgba(0, 0, 0, 0.16) inset",
       },
+      keyframes: {
+        pop: {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '60%': { transform: 'scale(1.05)', opacity: '1' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        pop: 'pop 0.5s ease-out forwards',
+      },
     },
   },
   plugins: [],

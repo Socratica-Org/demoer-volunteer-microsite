@@ -118,7 +118,7 @@ export default function Home() {
       >
         {isAnimating && (
           <Image
-            src="/backgrounds/background-middle.svg"
+            src="/backgrounds/background-final.svg"
             alt="Background"
             layout="fill"
             objectFit="cover"

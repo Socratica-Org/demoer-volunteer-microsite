@@ -72,13 +72,13 @@ export default function Home() {
         <div className="absolute top-10 left-4 md:left-10 w-1/2 h-full z-40">
           <p className="text-2xl font-fiveBySevenBold opacity-50">
             TO:
-            <span className="ml-[3.4rem] font-conte text-2xl">
+            <span className="ml-[2.9rem] md:ml-[3.4rem] font-conte text-2xl">
               {capitalizeFirstLetter((demoer as string) || "Demoer")}
             </span>
           </p>
           <p className="text-2xl font-fiveBySevenBold opacity-50">
             FROM:
-            <span className="ml-6 font-conte text-2xl">Socratica</span>
+            <span className="ml-4 md:ml-6 font-conte text-2xl">Socratica</span>
           </p>
 
           <div 
@@ -93,7 +93,7 @@ export default function Home() {
               width={16}
               height={16}
             />
-            <div className="text-[#F5F1E2] tracking-widest font-fiveBySevenBold uppercase text-[11px] sm:text-[16px]">
+            <div className="text-[#F5F1E2] tracking-widest font-fiveBySevenBold uppercase text-[9px] md:text-[11px]">
               Open Your Letter
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
                   Dear {capitalizeFirstLetter((demoer as string) || "Demoer")},
                 </p>
 
-                <div className="mt-4 flex flex-col gap-6 max-w-[70%]">
+                <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[70%]">
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     between us? we couldn’t be more excited to have you demo at the Symposium!
                   </p>

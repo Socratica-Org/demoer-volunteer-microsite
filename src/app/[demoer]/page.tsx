@@ -69,7 +69,7 @@ export default function Home() {
         className="fixed right-[-450px] mix-blend-soft-light top-0 z-[30] w-screen h-screen pointer-events-none"
       />
       {!isAnimating && (
-        <div className="absolute top-10 left-10 w-1/2 h-full z-40">
+        <div className="absolute top-10 left-4 md:left-10 w-1/2 h-full z-40">
           <p className="text-2xl font-fiveBySevenBold opacity-50">
             TO:
             <span className="ml-[3.4rem] font-conte text-2xl">
@@ -148,22 +148,22 @@ export default function Home() {
                 height={550}
                 className="transition-opacity duration-1000"
               />
-              <div className="absolute inset-0 top-[5.5rem] left-[5.75rem]">
+              <div className="absolute inset-0 top-[3rem] md:top-[5.5rem] left-[4rem] md:left-[5.75rem]">
                 <p className="text-3xl font-conte text-black opacity-50">
                   Dear {capitalizeFirstLetter((demoer as string) || "Demoer")},
                 </p>
 
                 <div className="mt-4 flex flex-col gap-6 max-w-[70%]">
-                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                  <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     between us? we couldn’t be more excited to have you demo at the Symposium!
                   </p>
-                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                  <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     we chose you because we think that your story and work is awesome—and we want you to be able to share it with the rest of the world. 
                   </p>
-                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                  <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     what you've made deserves to be shared, and we want to give you the stage to tell your story to the world, in your own words.
                   </p>
-                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                  <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     we can't wait to start working with you and help bring your story to life!
                   </p>
                 </div>

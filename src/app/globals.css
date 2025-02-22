@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #FFFCF3;
+  background-color: #fffcf3;
   position: relative;
   margin: 0;
 }
@@ -15,7 +15,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/grain.png'), linear-gradient(lightgray, lightgray);
+  background-image: url("/grain.png"), linear-gradient(lightgray, lightgray);
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -43,4 +43,3 @@ body::before {
   font-weight: normal;
   src: url("/fonts/Conte.otf") format("opentype");
 }
-

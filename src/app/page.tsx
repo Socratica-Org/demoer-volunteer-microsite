@@ -4,23 +4,21 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen max-h-screen overflow-hidden">
-      <div className="absolute top-0 left-[12%] w-full h-full z-30">
-        <Image
-          src="/images/left-spotlight.svg"
-          alt="Left Spotlight"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <Image
+        src="/images/left-spotlight.svg"
+        width={1836.93}
+        height={1843.43}
+        alt="Left Spotlight"
+        className="fixed left-[50px] mix-blend-soft-light top-0 z-[30] w-screen h-screen pointer-events-none"
+      />
 
-      <div className="absolute top-0 -right-1/3 w-full h-full z-30">
-        <Image
-          src="/images/right-spotlight.svg"
-          alt="Right Spotlight"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <Image
+        src="/images/right-spotlight.svg"
+        width={1132.53}
+        height={1724.1}
+        alt="Right Spotlight"
+        className="fixed right-[-450px] mix-blend-soft-light top-0 z-[30] w-screen h-screen pointer-events-none"
+      />
 
       <div className="absolute top-10 left-10 w-1/2 h-full z-40">
         <p className="text-2xl font-fiveBySeven">

@@ -12,12 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         gold: "#CDC19F",
+        "soft-grey": "#2A2928",
       },
       fontFamily: {
         tiempos: ["Tiempos Headline", "serif"],
         fiveBySeven: ["Five By Seven", "sans-serif"],
         fiveBySevenBold: ["Five By Seven Bold", "sans-serif"],
         conte: ["Conte", "sans-serif"],
+        suisse: ["Suisse Intl", "sans-serif"],
       },
       boxShadow: {
         letter:

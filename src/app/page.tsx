@@ -142,16 +142,31 @@ export default function Home() {
           <div className="absolute inset-0 flex items-center justify-center z-50">
             <div className="relative animate-pop">
               <Image
-                src="/images/letter.svg"
-                alt="Letter"
-                width={500}
-                height={500}
+                src="/images/paper.svg"
+                alt="Paper"
+                width={550}
+                height={550}
                 className="transition-opacity duration-1000"
               />
               <div className="absolute inset-0 top-[5.5rem] left-[5.75rem]">
                 <p className="text-3xl font-conte text-black opacity-50">
                   Dear {capitalizeFirstLetter((demoer as string) || "Demoer")},
                 </p>
+
+                <div className="mt-4 flex flex-col gap-6 max-w-[70%]">
+                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                    between us? we couldn’t be more excited to have you demo at the Symposium!
+                  </p>
+                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                    we chose you because we think that your story and work is awesome—and we want you to be able to share it with the rest of the world. 
+                  </p>
+                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                    what you've made deserves to be shared, and we want to give you the stage to tell your story to the world, in your own words.
+                  </p>
+                  <p className="text-base font-suisse text-soft-grey tracking-[-0.2px]">
+                    we can't wait to start working with you and help bring your story to life!
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -161,10 +161,10 @@ export default function Home() {
                     we chose you because we think that your story and work is awesome—and we want you to be able to share it with the rest of the world. 
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    what you've made deserves to be shared, and we want to give you the stage to tell your story to the world, in your own words.
+                    what you&apos;ve made deserves to be shared, and we want to give you the stage to tell your story to the world, in your own words.
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    we can't wait to start working with you and help bring your story to life!
+                    we can&apos;t wait to start working with you and help bring your story to life!
                   </p>
                 </div>
               </div>

@@ -7,6 +7,7 @@ import Ticket from "./components/ticket";
 export default function Home() {
   const [screenSize, setScreenSize] = useState("full");
   const offset1 = (screenSize == "mobile") ? 155 : 214;
+  const [isAnimating, setIsAnimating] = useState(false);
 
   return (
     <div className="relative flex flex-col min-h-screen max-h-screen overflow-hidden">
@@ -40,6 +41,7 @@ export default function Home() {
 
         <button
           onClick={() => {
+            setIsAnimating(true);
             console.log("clicked");
           }}
           className="z-50 mt-8 flex flex-row items-center gap-2 bg-[#212121] text-white px-6 py-3 border-2 border-white/30 shadow-letter hover:bg-[#333333] hover:shadow-none"
@@ -55,19 +57,39 @@ export default function Home() {
           </p>
         </button>
       </div>
+      
+      {!isAnimating && (
+        <div
+          className="absolute top-0 right-0 w-1/2 h-full"
+        >
+          <Image src="/images/right-side.svg" alt="Background" layout="fill" objectFit="cover" />
+        </div>
+      )}
 
-      <div className="absolute top-0 right-0 w-1/2 h-full">
-        <Image
-          src="/images/right-side.svg"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-        />
+      <div
+        className={`absolute top-0 right-0 w-full h-full transition-transform duration-1000 ${
+          isAnimating ? "transform translate-x-0" : "transform translate-x-1/2"
+        }`}
+      >
+        {isAnimating && (
+          <Image
+            src="/images/background-middle.svg"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
       </div>
 
       <div
-        className="absolute top-0 right-0 w-[40%] h-auto z-10"
-        style={{ transform: "rotate(40deg) translate(-275px, 150px)" }}
+        className={`absolute top-0 right-0 w-1/2 h-auto z-10 transition-transform duration-1000 ${
+          isAnimating ? "transform translate-y-1/2" : "transform translate-y-0"
+        }`}
+        style={{
+          transform: isAnimating
+            ? "translate(-50%, 50%) rotate(15deg)"
+            : "rotate(40deg) translate(-375px, 150px)",
+        }}
       >
         {/* <Image 
           src="/images/final-ticket.png"

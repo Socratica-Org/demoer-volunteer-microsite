@@ -16,7 +16,11 @@ export default {
       fontFamily: {
         tiempos: ["Tiempos Headline", "serif"],
         fiveBySeven: ["Five By Seven", "sans-serif"],
+        fiveBySevenBold: ["Five By Seven Bold", "sans-serif"],
         conte: ["Conte", "sans-serif"],
+      },
+      boxShadow: {
+        'letter': '0px 8px 0px 0px rgba(0, 0, 0, 0.24), 0px 4px 48px 0px rgba(0, 0, 0, 0.16) inset',
       },
     },
   },

@@ -81,7 +81,7 @@ export default function Home() {
             <span className="ml-4 md:ml-6 font-conte text-2xl">Socratica</span>
           </p>
 
-          <div 
+          <div
             onClick={() => {
               setIsAnimating(true);
             }}
@@ -155,16 +155,21 @@ export default function Home() {
 
                 <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[85%] md:max-w-[70%]">
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    between us? we couldn't be more excited to have you demo at the symposium!
+                    between us? we couldn&apos;t be more excited to have you demo at
+                    the symposium!
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    we chose you because we think that your story and work is awesome—and we want you to be able to share it with the rest of the world.
+                    we chose you because we think that your story and work is
+                    awesome—and we want you to be able to share it with the rest
+                    of the world.
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    what you've made deserves to be shared, and we want to give you the chance to tell your story to the world.
+                    what you&apos;ve made deserves to be shared, and we want to give
+                    you the chance to tell your story to the world.
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    so we're super excited to see you share your awesome projects
+                    so we&apos;re super excited to see you share your awesome
+                    projects!
                   </p>
                 </div>
               </div>
@@ -202,7 +207,6 @@ export default function Home() {
           />
         </div>
       )}
-
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <div className="flex-grow" />

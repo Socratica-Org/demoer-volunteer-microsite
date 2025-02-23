@@ -153,7 +153,7 @@ export default function Home() {
                   Dear {capitalizeFirstLetter((demoer as string) || "Demoer")},
                 </p>
 
-                <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[70%]">
+                <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[85%] md:max-w-[70%]">
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     between us? we couldn’t be more excited to have you demo at the Symposium!
                   </p>
@@ -179,7 +179,7 @@ export default function Home() {
         }`}
         style={{
           transform: isFinal
-            ? "translate(-130%, 150%) rotate(15deg)"
+            ? "translate(-130%, 100%) rotate(15deg)"
             : isAnimating
               ? "translate(-50%, 50%) rotate(15deg)"
               : "rotate(40deg) translate(-375px, 150px)",

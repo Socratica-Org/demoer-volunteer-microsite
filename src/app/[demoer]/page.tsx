@@ -6,7 +6,12 @@ import Ticket from "../components/ticket";
 
 function capitalizeFirstLetter(str: string): string {
   if (!str) return str;
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  // Replace dashes with commas and split into words
+  const words = str.split('-');
+  // Capitalize first letter of each word and join with commas and space
+  return words
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(', ');
 }
 
 export default function Home() {
@@ -155,7 +160,7 @@ export default function Home() {
 
                 <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[85%] md:max-w-[70%]">
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    between us? we couldn’t be more excited to have you demo at
+                    between us? we couldn&apos;t be more excited to have you demo at
                     the Symposium!
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">

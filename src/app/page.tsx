@@ -179,7 +179,7 @@ export default function Home() {
         }`}
         style={{
           transform: isFinal
-            ? "translate(-130%, 100%) rotate(15deg)"
+            ? "translate(-130%, 90%) rotate(15deg)"
             : isAnimating
               ? "translate(-50%, 50%) rotate(15deg)"
               : "rotate(40deg) translate(-375px, 150px)",

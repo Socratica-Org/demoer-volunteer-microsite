@@ -170,12 +170,10 @@ export default function Home() {
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
                     what you&apos;ve made deserves to be shared, and we want to
-                    give you the stage to tell your story to the world, in your
-                    own words.
+                    give you the chance to tell your story to the world.
                   </p>
                   <p className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]">
-                    we can&apos;t wait to start working with you and help bring
-                    your story to life!
+                    we can&apos;t wait to have you demo at the symposium!
                   </p>
                 </div>
               </div>

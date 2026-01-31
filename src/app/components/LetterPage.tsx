@@ -242,38 +242,38 @@ export default function LetterPage({
             priority={true}
           />
         )}
+      </div>
 
-        {/* Letter content */}
-        {showLetter && (
-          <div className="absolute inset-0 flex items-center justify-center z-50">
-            <div className="relative animate-pop">
-              <Image
-                src="/images/paper.svg"
-                alt="Paper"
-                width={550}
-                height={550}
-                className="transition-opacity duration-1000"
-              />
-              <div className="absolute inset-0 top-[3rem] md:top-[5.5rem] left-[4rem] md:left-[5.75rem]">
-                <p className="text-3xl font-conte text-black opacity-50">
-                  Dear {greetingName},
-                </p>
+      {/* Letter content - outside animated container for proper z-index */}
+      {showLetter && (
+        <div className="fixed inset-0 flex items-center justify-center z-[9999]">
+          <div className="relative animate-pop">
+            <Image
+              src="/images/paper.svg"
+              alt="Paper"
+              width={550}
+              height={550}
+              className="transition-opacity duration-1000"
+            />
+            <div className="absolute inset-0 top-[3rem] md:top-[5.5rem] left-[4rem] md:left-[5.75rem]">
+              <p className="text-3xl font-conte text-black opacity-50">
+                Dear {greetingName},
+              </p>
 
-                <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[85%] md:max-w-[70%]">
-                  {paragraphs.map((paragraph, index) => (
-                    <p
-                      key={index}
-                      className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+              <div className="mt-4 flex flex-col gap-3 md:gap-6 max-w-[85%] md:max-w-[70%]">
+                {paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Ticket */}
       <div

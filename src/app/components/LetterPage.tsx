@@ -162,6 +162,7 @@ export default function LetterPage({
             alt="Background"
             layout="fill"
             objectFit="cover"
+            priority={true}
           />
         </div>
       )}
@@ -227,6 +228,7 @@ export default function LetterPage({
             className={`transition-opacity duration-1000 ${
               isFinal ? "opacity-0" : "opacity-100"
             }`}
+            priority={true}
           />
         )}
 
@@ -237,6 +239,7 @@ export default function LetterPage({
             layout="fill"
             objectFit="cover"
             className="transition-opacity duration-1000 opacity-100"
+            priority={true}
           />
         )}
 

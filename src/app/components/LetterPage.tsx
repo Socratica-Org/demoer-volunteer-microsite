@@ -2,6 +2,7 @@
 import backgroundFinal from "@/assets/backgrounds/background-final.png";
 import rightSide from "@/assets/backgrounds/right-side.png";
 import bigYellowBlob from "@/assets/images/big-yellow-blob.png";
+import closedLetter from "@/assets/images/closed-letter.png";
 import littleGreyDude from "@/assets/images/little-grey-dude.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -304,7 +305,7 @@ export default function LetterPage({
           style={{ zIndex: 1000, opacity }}
         >
           <Image
-            src="/images/closed-letter.png"
+            src={closedLetter}
             alt="Closed Letter"
             loading="eager"
             className="transition-opacity duration-1000"

@@ -1,11 +1,12 @@
+import finalTicket from "@/assets/images/final-ticket.png";
+import Image from "next/image";
 import React, {
-  useState,
-  useEffect,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
+  useState,
 } from "react";
-import Image from "next/image";
 
 const Ticket: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
@@ -47,7 +48,7 @@ const Ticket: React.FC = () => {
       mixBlendMode: "screen" as const,
       pointerEvents: "none" as const,
     }),
-    [mousePosition, isHovering],
+    [mousePosition, isHovering]
   );
 
   return (
@@ -56,9 +57,8 @@ const Ticket: React.FC = () => {
       style={{ position: "relative", display: "inline-block" }}
     >
       <Image
-        src="/images/final-ticket.png"
-        width={1089}
-        height={389}
+        src={finalTicket}
+        loading="eager"
         alt="ticket"
         className="shadow-2xl w-full"
         priority

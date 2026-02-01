@@ -1,6 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import backgroundFinal from "@/assets/backgrounds/background-final.png";
+import rightSide from "@/assets/backgrounds/right-side.png";
+import bigYellowBlob from "@/assets/images/big-yellow-blob.png";
+import littleGreyDude from "@/assets/images/little-grey-dude.png";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Ticket from "./ticket";
 
 interface LetterPageProps {
@@ -40,7 +44,9 @@ export default function LetterPage({
   // Use provided formatter or default based on whether name has dashes
   const formatDisplayName = (name: string) => {
     if (formatName) return formatName(name);
-    return name.includes("-") ? capitalizeWithDashes(name) : defaultCapitalize(name);
+    return name.includes("-")
+      ? capitalizeWithDashes(name)
+      : defaultCapitalize(name);
   };
 
   // Display name for the "TO:" field
@@ -54,9 +60,7 @@ export default function LetterPage({
   );
 
   // Display name for the letter greeting
-  const greetingName = demoerName
-    ? formatDisplayName(demoerName)
-    : "Demoer";
+  const greetingName = demoerName ? formatDisplayName(demoerName) : "Demoer";
 
   // Default letter paragraphs
   const defaultParagraphs = [
@@ -158,7 +162,7 @@ export default function LetterPage({
       {!isAnimating && (
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <Image
-            src="/backgrounds/right-side.svg"
+            src={rightSide}
             alt="Background"
             layout="fill"
             objectFit="cover"
@@ -174,14 +178,15 @@ export default function LetterPage({
             ? "top-[2%] right-[5%] md:top-[0%] md:right-[10%]"
             : "top-[-2%] right-[-5%] md:top-[-5%] md:right-[-3%]"
         } ${
-          isAnimating && !showLetter ? "opacity-0 scale-90" : "opacity-100 scale-100"
+          isAnimating && !showLetter
+            ? "opacity-0 scale-90"
+            : "opacity-100 scale-100"
         }`}
       >
         <Image
-          src="/images/big-yellow-blob.svg"
+          src={bigYellowBlob}
           alt="Yellow Blob Mascot"
-          width={400}
-          height={390}
+          loading="eager"
           className={`h-auto transition-all duration-1000 ${
             showLetter
               ? "w-[140px] md:w-[220px] lg:w-[320px] rotate-[15deg]"
@@ -197,14 +202,15 @@ export default function LetterPage({
             ? "bottom-[10%] left-[18%] md:bottom-[5%] md:left-[25%]"
             : "bottom-[15%] left-[5%] md:bottom-[27%] md:left-[10%]"
         } ${
-          isAnimating && !showLetter ? "opacity-0 scale-90" : "opacity-100 scale-100"
+          isAnimating && !showLetter
+            ? "opacity-0 scale-90"
+            : "opacity-100 scale-100"
         }`}
       >
         <Image
-          src="/images/little-grey-dude.svg"
+          src={littleGreyDude}
           alt="Little Grey Character"
-          width={200}
-          height={163}
+          loading="eager"
           className={`h-auto transition-all duration-1000 ${
             showLetter
               ? "w-[80px] md:w-[120px] lg:w-[160px] rotate-[-10deg]"
@@ -234,7 +240,7 @@ export default function LetterPage({
 
         {isFinal && (
           <Image
-            src="/backgrounds/background-final.svg"
+            src={backgroundFinal}
             alt="Background"
             layout="fill"
             objectFit="cover"
@@ -298,10 +304,9 @@ export default function LetterPage({
           style={{ zIndex: 1000, opacity }}
         >
           <Image
-            src="/images/closed-letter.svg"
+            src="/images/closed-letter.png"
             alt="Closed Letter"
-            width={160}
-            height={160}
+            loading="eager"
             className="transition-opacity duration-1000"
           />
         </div>

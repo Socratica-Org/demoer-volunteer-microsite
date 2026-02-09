@@ -265,12 +265,12 @@ export default function LetterPage({
 
       {/* Ticket */}
       <div
-        className={`absolute top-0 right-0 w-1/2 h-auto z-10 transition-transform duration-1000 ${
+        className={`absolute top-20 right-0 w-1/2 h-auto z-[10000] transition-transform duration-1000 ${
           isAnimating ? "transform translate-y-1/2" : "transform translate-y-0"
         }`}
         style={{
           transform: isFinal
-            ? "translate(-130%, 90%) rotate(15deg)"
+            ? "translate(30%, 100%) rotate(-15deg)"
             : isAnimating
               ? "translate(-50%, 50%) rotate(15deg)"
               : "rotate(40deg) translate(-375px, 150px)",

@@ -295,7 +295,7 @@ export default function LetterPage({
       )}
 
       {/* Socratica logo at bottom */}
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="absolute inset-0 z-10 flex flex-col">
         <div className="flex-grow" />
         <Image
           src={

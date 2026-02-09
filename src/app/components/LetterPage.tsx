@@ -252,7 +252,7 @@ export default function LetterPage({
                   <p className="text-sm md:text-base font-forma text-soft-grey tracking-[-0.2px]">
                     rooting for you,
                   </p>
-                  <p className="text-2xl font-conte text-black mt-1 flex items-end gap-1" style={{ transform: "rotate(-8deg)", marginLeft: "7rem" }}>
+                  <p className="text-2xl font-conte text-black flex items-end gap-1" style={{ transform: "rotate(-8deg)", marginLeft: "7rem" }}>
                     <span className="opacity-50">Socratica</span>
                     <Image src={heart} alt="heart" className="w-5 h-5 inline-block opacity-100" />
                   </p>
@@ -265,7 +265,7 @@ export default function LetterPage({
 
       {/* Ticket */}
       <div
-        className={`absolute top-20 right-0 w-1/2 h-auto z-[10000] transition-transform duration-1000 ${
+        className={`absolute top-10 md:top-20 right-0 w-1/2 h-auto z-[10000] transition-transform duration-1000 ${
           isAnimating ? "transform translate-y-1/2" : "transform translate-y-0"
         }`}
         style={{

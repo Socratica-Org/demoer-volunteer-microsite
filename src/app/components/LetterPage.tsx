@@ -185,7 +185,7 @@ export default function LetterPage({
       <div
         className={`absolute z-[60] pointer-events-none transition-all duration-1000 ease-out ${
           showLetter
-            ? "bottom-[10%] left-[18%] md:bottom-[5%] md:left-[25%]"
+            ? "bottom-[14%] left-[18%] md:bottom-[5%] md:left-[25%]"
             : "bottom-[15%] left-[5%] md:bottom-[27%] md:left-[10%]"
         } ${
           isAnimating && !showLetter

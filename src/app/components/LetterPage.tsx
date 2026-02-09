@@ -3,6 +3,7 @@ import backgroundFinal from "@/assets/backgrounds/background-final.png";
 import rightSide from "@/assets/backgrounds/right-side.png";
 import bigYellowBlob from "@/assets/images/big-yellow-blob.png";
 import closedLetter from "@/assets/images/closed-letter.png";
+import heart from "@/assets/images/heart.png";
 import littleGreyDude from "@/assets/images/little-grey-dude.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -67,8 +68,8 @@ export default function LetterPage({
   const defaultParagraphs = [
     "between us? we couldn't be more excited to have you demo at the Symposium!",
     "we chose you because we think that your story and work is awesome—and we want you to be able to share it with the rest of the world.",
-    "what you've made deserves to be shared, and we want to give you the chance to tell your story to the world.",
-    "we can't wait to have you demo at the Symposium!",
+    "what you've made deserves to be shared, and we want to give you the stage to tell your story to the world, in your own words.",
+    "we can't wait to start working with you and help bring your story to life!",
   ];
 
   const paragraphs = letterParagraphs || defaultParagraphs;
@@ -110,22 +111,6 @@ export default function LetterPage({
 
   return (
     <div className="relative flex flex-col min-h-screen max-h-screen overflow-hidden">
-      {/* Spotlights */}
-      <Image
-        src="/images/left-spotlight.svg"
-        width={1836.93}
-        height={1843.43}
-        alt="Left Spotlight"
-        className="fixed left-[50px] mix-blend-soft-light top-0 z-[30] w-screen h-screen pointer-events-none"
-      />
-      <Image
-        src="/images/right-spotlight.svg"
-        width={1132.53}
-        height={1724.1}
-        alt="Right Spotlight"
-        className="fixed right-[-450px] mix-blend-soft-light top-0 z-[30] w-screen h-screen pointer-events-none"
-      />
-
       {/* Header with TO/FROM and Button */}
       {!isAnimating && (
         <div className="absolute top-10 left-4 md:left-10 w-1/2 h-full z-40">
@@ -228,24 +213,10 @@ export default function LetterPage({
       >
         {isAnimating && (
           <Image
-            src="/backgrounds/background-final.svg"
-            alt="Background"
-            layout="fill"
-            objectFit="cover"
-            className={`transition-opacity duration-1000 ${
-              isFinal ? "opacity-0" : "opacity-100"
-            }`}
-            priority={true}
-          />
-        )}
-
-        {isFinal && (
-          <Image
             src={backgroundFinal}
             alt="Background"
             layout="fill"
             objectFit="cover"
-            className="transition-opacity duration-1000 opacity-100"
             priority={true}
           />
         )}
@@ -271,11 +242,21 @@ export default function LetterPage({
                 {paragraphs.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="text-sm md:text-base font-suisse text-soft-grey tracking-[-0.2px]"
+                    className="text-sm md:text-base font-forma text-soft-grey tracking-[-0.2px]"
                   >
                     {paragraph}
                   </p>
                 ))}
+
+                <div className="mt-4 flex flex-col items-center max-w-[85%] md:max-w-[70%]">
+                  <p className="text-sm md:text-base font-forma text-soft-grey tracking-[-0.2px]">
+                    rooting for you,
+                  </p>
+                  <p className="text-2xl font-conte text-black mt-1 flex items-end gap-1" style={{ transform: "rotate(-8deg)", marginLeft: "7rem" }}>
+                    <span className="opacity-50">Socratica</span>
+                    <Image src={heart} alt="heart" className="w-5 h-5 inline-block opacity-100" />
+                  </p>
+                </div>
               </div>
             </div>
           </div>

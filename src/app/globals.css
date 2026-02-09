@@ -51,6 +51,27 @@ body::before {
   src: url("/fonts/SuisseIntl-Medium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Rockbay";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Rockbay.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Semack";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Semack-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "FormaDJRDeck";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/FormaDJRDeck-Regular.woff2") format("woff2");
+}
+
 @layer components {
   .glassmorphic-button {
     @apply transition-all duration-200 shadow-[0_4px_0_rgba(255,255,255,0.24)] backdrop-blur-[24px] before:absolute before:inset-0 before:shadow-[inset_0_2px_24px_rgba(255,255,255,0.16)] active:shadow-[0_0px_0px_rgb(0,0,0)] active:translate-y-[4px] border-2 border-[#FFFFFF24] flex flex-row px-[24px] py-[16px] items-center relative cursor-pointer;

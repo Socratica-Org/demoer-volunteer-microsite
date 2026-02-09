@@ -20,6 +20,9 @@ export default {
         fiveBySevenBold: ["Five By Seven Bold", "sans-serif"],
         conte: ["Conte", "sans-serif"],
         suisse: ["Suisse Intl", "sans-serif"],
+        rockbay: ["Rockbay", "cursive"],
+        semack: ["Semack", "cursive"],
+        forma: ["FormaDJRDeck", "sans-serif"],
       },
       boxShadow: {
         letter:

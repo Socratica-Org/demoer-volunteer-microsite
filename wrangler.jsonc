@@ -4,6 +4,12 @@
   "name": "symposium-demoer-volunteer-invite",
   "compatibility_date": "2026-04-10",
   "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "demos.socratica.info",
+      "custom_domain": true,
+    },
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",

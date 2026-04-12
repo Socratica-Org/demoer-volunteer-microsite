@@ -4,6 +4,7 @@
   "name": "symposium-demoer-volunteer-invite",
   "compatibility_date": "2026-04-10",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
   "routes": [
     {
       "pattern": "demos.socratica.info",

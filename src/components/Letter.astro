@@ -1,0 +1,75 @@
+---
+import { Picture } from "astro:assets";
+import backgroundFinal from "@/assets/backgrounds/background-final.png";
+import rightSide from "@/assets/backgrounds/right-side.png";
+import bigYellowBlob from "@/assets/images/big-yellow-blob.png";
+import closedLetter from "@/assets/images/closed-letter.png";
+import finalTicket from "@/assets/images/final-ticket.png";
+import heart from "@/assets/images/heart.png";
+import littleGreyDude from "@/assets/images/little-grey-dude.png";
+import LetterPage from "@/components/LetterPage";
+
+interface Props {
+  demoerName?: string;
+}
+
+const { demoerName } = Astro.props;
+---
+
+<LetterPage client:load demoerName={demoerName}>
+  <Picture
+    slot="bigYellowBlob"
+    src={bigYellowBlob}
+    alt="Yellow Blob Mascot"
+    formats={["avif", "webp"]}
+    class="w-full h-auto"
+    loading="eager"
+  />
+  <Picture
+    slot="littleGreyDude"
+    src={littleGreyDude}
+    alt="Little Grey Character"
+    formats={["avif", "webp"]}
+    class="w-full h-auto"
+    loading="eager"
+  />
+  <Picture
+    slot="heart"
+    src={heart}
+    alt="heart"
+    formats={["avif", "webp"]}
+    class="w-5 h-5 inline-block opacity-100"
+  />
+  <Picture
+    slot="closedLetter"
+    src={closedLetter}
+    alt="Closed Letter"
+    formats={["avif", "webp"]}
+    class="transition-opacity duration-1000"
+    loading="eager"
+  />
+  <Picture
+    slot="rightSide"
+    src={rightSide}
+    alt="Background"
+    formats={["avif", "webp"]}
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+  />
+  <Picture
+    slot="backgroundFinal"
+    src={backgroundFinal}
+    alt="Background"
+    formats={["avif", "webp"]}
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+  />
+  <Picture
+    slot="ticket"
+    src={finalTicket}
+    alt="ticket"
+    formats={["avif", "webp"]}
+    class="shadow-2xl w-full"
+    loading="eager"
+  />
+</LetterPage>

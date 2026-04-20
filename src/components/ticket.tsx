@@ -1,14 +1,17 @@
-import finalTicket from "@/assets/images/final-ticket.png";
-import Image from "next/image";
 import React, {
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
+  type ReactNode,
 } from "react";
 
-const Ticket: React.FC = () => {
+interface TicketProps {
+  ticket?: ReactNode;
+}
+
+const Ticket: React.FC<TicketProps> = ({ ticket }) => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [isHovering, setIsHovering] = useState(false);
   const ticketRef = useRef<HTMLDivElement>(null);
@@ -48,7 +51,7 @@ const Ticket: React.FC = () => {
       mixBlendMode: "screen" as const,
       pointerEvents: "none" as const,
     }),
-    [mousePosition, isHovering]
+    [mousePosition, isHovering],
   );
 
   return (
@@ -56,13 +59,7 @@ const Ticket: React.FC = () => {
       ref={ticketRef}
       style={{ position: "relative", display: "inline-block" }}
     >
-      <Image
-        src={finalTicket}
-        loading="eager"
-        alt="ticket"
-        className="shadow-2xl w-full"
-        priority
-      />
+      {ticket}
       <div style={gleamStyle} />
     </div>
   );

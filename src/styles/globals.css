@@ -1,6 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #cdc19f;
+  --color-soft-grey: #2a2928;
+
+  --font-tiempos: "Tiempos Headline", serif;
+  --font-fiveBySeven: "Five By Seven", sans-serif;
+  --font-fiveBySevenBold: "Five By Seven Bold", sans-serif;
+  --font-conte: "Conte", sans-serif;
+  --font-suisse: "Suisse Intl", sans-serif;
+  --font-rockbay: "Rockbay", cursive;
+  --font-semack: "Semack", cursive;
+  --font-forma: "FormaDJRDeck", sans-serif;
+
+  --shadow-letter:
+    0px 8px 0px 0px rgba(0, 0, 0, 0.24),
+    0px 4px 48px 0px rgba(0, 0, 0, 0.16) inset;
+
+  --animate-pop: pop 0.5s ease-out forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 body {
   background-color: #fffcf3;

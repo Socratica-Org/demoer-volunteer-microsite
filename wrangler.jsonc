@@ -1,0 +1,20 @@
+{
+  "compatibility_date": "2026-04-13",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "name": "symposium-demoer-volunteer-invite",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "demos.socratica.info",
+      "custom_domain": true,
+    },
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+  },
+}

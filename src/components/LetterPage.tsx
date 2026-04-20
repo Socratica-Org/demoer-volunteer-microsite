@@ -1,12 +1,4 @@
-"use client";
-import backgroundFinal from "@/assets/backgrounds/background-final.png";
-import rightSide from "@/assets/backgrounds/right-side.png";
-import bigYellowBlob from "@/assets/images/big-yellow-blob.png";
-import closedLetter from "@/assets/images/closed-letter.png";
-import heart from "@/assets/images/heart.png";
-import littleGreyDude from "@/assets/images/little-grey-dude.png";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Ticket from "./ticket";
 
 interface LetterPageProps {
@@ -18,6 +10,13 @@ interface LetterPageProps {
   letterGreeting?: string;
   /** Custom letter paragraphs (optional - uses default if not provided) */
   letterParagraphs?: string[];
+  bigYellowBlob?: ReactNode;
+  littleGreyDude?: ReactNode;
+  heart?: ReactNode;
+  closedLetter?: ReactNode;
+  rightSide?: ReactNode;
+  backgroundFinal?: ReactNode;
+  ticket?: ReactNode;
 }
 
 function defaultCapitalize(str: string): string {
@@ -37,13 +36,28 @@ export default function LetterPage({
   demoerName,
   formatName,
   letterParagraphs,
+  bigYellowBlob,
+  littleGreyDude,
+  heart,
+  closedLetter,
+  rightSide,
+  backgroundFinal,
+  ticket,
 }: LetterPageProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isFinal, setIsFinal] = useState(false);
   const [showLetter, setShowLetter] = useState(false);
   const [opacity, setOpacity] = useState(0);
+  const [clientName, setClientName] = useState<string | undefined>(undefined);
 
-  // Use provided formatter or default based on whether name has dashes
+  useEffect(() => {
+    if (demoerName) return;
+    const segment = window.location.pathname.split("/").filter(Boolean)[0];
+    if (segment) setClientName(decodeURIComponent(segment));
+  }, [demoerName]);
+
+  const effectiveName = demoerName ?? clientName;
+
   const formatDisplayName = (name: string) => {
     if (formatName) return formatName(name);
     return name.includes("-")
@@ -51,9 +65,8 @@ export default function LetterPage({
       : defaultCapitalize(name);
   };
 
-  // Display name for the "TO:" field
-  const toDisplayName = demoerName ? (
-    formatDisplayName(demoerName)
+  const toDisplayName = effectiveName ? (
+    formatDisplayName(effectiveName)
   ) : (
     <>
       <span className="md:hidden">Demoer</span>
@@ -61,10 +74,10 @@ export default function LetterPage({
     </>
   );
 
-  // Display name for the letter greeting
-  const greetingName = demoerName ? formatDisplayName(demoerName) : "Demoer";
+  const greetingName = effectiveName
+    ? formatDisplayName(effectiveName)
+    : "Demoer";
 
-  // Default letter paragraphs
   const defaultParagraphs = [
     "between us? we couldn't be more excited to have you demo at the Symposium!",
     "we chose you because we think that your story and work is awesome—and we want you to be able to share it with the rest of the world.",
@@ -111,7 +124,6 @@ export default function LetterPage({
 
   return (
     <div className="relative flex flex-col min-h-screen max-h-screen overflow-hidden">
-      {/* Header with TO/FROM and Button */}
       {!isAnimating && (
         <div className="absolute top-10 left-4 md:left-10 w-1/2 h-full z-40">
           <p className="text-2xl font-fiveBySevenBold opacity-50">
@@ -131,7 +143,7 @@ export default function LetterPage({
             }}
             className="mt-12 glassmorphic-button border-[1px] border-white/30 shadow-letter hover:bg-[#333333] hover:shadow-none bg-[#212121] gap-[8px] justify-center inline-flex"
           >
-            <Image
+            <img
               src="/images/asterism.svg"
               alt="Asterism"
               width={16}
@@ -144,89 +156,50 @@ export default function LetterPage({
         </div>
       )}
 
-      {/* Right side background (before animation) */}
       {!isAnimating && (
-        <div className="absolute top-0 right-0 w-1/2 h-full">
-          <Image
-            src={rightSide}
-            alt="Background"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
-        </div>
+        <div className="absolute top-0 right-0 w-1/2 h-full">{rightSide}</div>
       )}
 
-      {/* Big Yellow Blob - Star Mascot in top right corner */}
       <div
         className={`absolute z-20 pointer-events-none transition-all duration-1000 ease-out ${
           showLetter
-            ? "top-[2%] right-[5%] md:top-[0%] md:right-[10%]"
-            : "top-[-2%] right-[-5%] md:top-[-5%] md:right-[-3%]"
+            ? "top-[2%] right-[5%] md:top-[0%] md:right-[10%] w-[140px] md:w-[220px] lg:w-[320px] rotate-[15deg]"
+            : "top-[-2%] right-[-5%] md:top-[-5%] md:right-[-3%] w-[180px] md:w-[280px] lg:w-[400px] rotate-[10deg]"
         } ${
           isAnimating && !showLetter
             ? "opacity-0 scale-90"
             : "opacity-100 scale-100"
         }`}
       >
-        <Image
-          src={bigYellowBlob}
-          alt="Yellow Blob Mascot"
-          loading="eager"
-          className={`h-auto transition-all duration-1000 ${
-            showLetter
-              ? "w-[140px] md:w-[220px] lg:w-[320px] rotate-[15deg]"
-              : "w-[180px] md:w-[280px] lg:w-[400px] rotate-[10deg]"
-          }`}
-        />
+        {bigYellowBlob}
       </div>
 
-      {/* Little Grey Dude - positioned on the left side */}
       <div
         className={`absolute z-[60] pointer-events-none transition-all duration-1000 ease-out ${
           showLetter
-            ? "bottom-[14%] left-[18%] md:bottom-[5%] md:left-[25%]"
-            : "bottom-[15%] left-[5%] md:bottom-[27%] md:left-[10%]"
+            ? "bottom-[14%] left-[18%] md:bottom-[5%] md:left-[25%] w-[80px] md:w-[120px] lg:w-[160px] rotate-[-10deg]"
+            : "bottom-[15%] left-[5%] md:bottom-[27%] md:left-[10%] w-[100px] md:w-[150px] lg:w-[200px] rotate-[-5deg]"
         } ${
           isAnimating && !showLetter
             ? "opacity-0 scale-90"
             : "opacity-100 scale-100"
         }`}
       >
-        <Image
-          src={littleGreyDude}
-          alt="Little Grey Character"
-          loading="eager"
-          className={`h-auto transition-all duration-1000 ${
-            showLetter
-              ? "w-[80px] md:w-[120px] lg:w-[160px] rotate-[-10deg]"
-              : "w-[100px] md:w-[150px] lg:w-[200px] rotate-[-5deg]"
-          }`}
-        />
+        {littleGreyDude}
       </div>
 
-      {/* Animated background container */}
       <div
         className={`absolute top-0 right-0 w-full h-full transition-transform duration-500 ${
           isAnimating ? "transform translate-x-0" : "transform translate-x-1/2"
         }`}
       >
-        {isAnimating && (
-          <Image
-            src={backgroundFinal}
-            alt="Background"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
-        )}
+        {isAnimating && backgroundFinal}
       </div>
 
-      {/* Letter content - outside animated container for proper z-index */}
       {showLetter && (
         <div className="fixed inset-0 flex items-center justify-center z-[9999]">
           <div className="relative animate-pop">
-            <Image
+            <img
               src="/images/paper.svg"
               alt="Paper"
               width={550}
@@ -252,9 +225,12 @@ export default function LetterPage({
                   <p className="text-sm md:text-base font-forma text-soft-grey tracking-[-0.2px]">
                     rooting for you,
                   </p>
-                  <p className="text-2xl font-conte mt-[-0.25rem] text-black flex items-end gap-1" style={{ transform: "rotate(-8deg)", marginLeft: "7rem" }}>
+                  <p
+                    className="text-2xl font-conte mt-[-0.25rem] text-black flex items-end gap-1"
+                    style={{ transform: "rotate(-8deg)", marginLeft: "7rem" }}
+                  >
                     <span className="opacity-50">Socratica</span>
-                    <Image src={heart} alt="heart" className="w-5 h-5 inline-block opacity-100" />
+                    {heart}
                   </p>
                 </div>
               </div>
@@ -263,7 +239,6 @@ export default function LetterPage({
         </div>
       )}
 
-      {/* Ticket */}
       <div
         className={`absolute top-10 md:top-20 right-0 w-1/2 h-auto z-[10000] transition-transform duration-1000 ${
           isAnimating ? "transform translate-y-1/2" : "transform translate-y-0"
@@ -276,37 +251,30 @@ export default function LetterPage({
               : "rotate(40deg) translate(-375px, 150px)",
         }}
       >
-        <Ticket />
+        <Ticket ticket={ticket} />
       </div>
 
-      {/* Closed letter animation */}
       {isAnimating && !showLetter && (
         <div
           className="absolute inset-0 flex items-center justify-center"
           style={{ zIndex: 1000, opacity }}
         >
-          <Image
-            src={closedLetter}
-            alt="Closed Letter"
-            loading="eager"
-            className="transition-opacity duration-1000"
-          />
+          {closedLetter}
         </div>
       )}
 
-      {/* Socratica logo at bottom */}
       <div className="absolute inset-0 z-10 flex flex-col">
         <div className="flex-grow" />
-        <Image
+        <img
           src={
             isAnimating
               ? "/images/socratica-transparent.svg"
               : "/images/socratica.svg"
           }
           alt="Socratica"
-          layout="responsive"
           width={2284}
           height={462}
+          className="w-full h-auto"
         />
       </div>
     </div>
